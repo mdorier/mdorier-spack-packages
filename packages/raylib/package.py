@@ -17,18 +17,3 @@ class Raylib(CMakePackage):
 
     version('master', branch='master')
     version('4.0.0', sha256='11f6087dc7bedf9efb3f69c0c872f637e421d914e5ecea99bbe7781f173dc38c')
-
-    """
-    def install(self, spec, prefix):
-        import glob
-        with working_dir('src'):
-            make('PLATFORM=PLATFORM_DESKTOP')
-            for d in ['include', 'lib']:
-                mkdirp(prefix+'/'+d)
-            headers = glob.glob('*.h')+glob.glob('extras/*.h')
-            for header in headers:
-                install(header, prefix+'/include')
-            install('libraylib.a', prefix+'/lib')
-        mkdirp(prefix+'/share')
-        install_tree('cmake', prefix+'/share')
-    """
